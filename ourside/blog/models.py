@@ -42,6 +42,10 @@ class BlogPageImageGallery(Orderable):
         "wagtailimages.Image", on_delete=models.CASCADE, related_name="+"
     )
     caption = models.CharField(max_length=255, blank=True)
+    panels = [
+        FieldPanel("image"),
+        FieldPanel("caption"),
+    ]
 
 @register_snippet
 class Author(models.Model):
